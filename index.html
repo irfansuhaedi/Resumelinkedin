@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irfan Suhaedi - Resume</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/WGvnYCS.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeUp 1s ease-in;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      border-left: 5px solid red;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .job-period {
+      color: gray;
+      font-weight: 400;
+    }
+
+    .skills ul li strong {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Floating buttons */
+    .whatsapp-float, .linkedin-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      animation: bounce 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float {
+      background-color: #25d366;
+    }
+
+    .linkedin-float {
+      bottom: 100px;
+      background-color: #0077b5;
+    }
+
+    .whatsapp-float:hover, .linkedin-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float i, .linkedin-float i {
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Irfan Suhaedi</h1>
+    <h2>Fleet & Supply Chain Administration Specialist</h2>
+  </header>
+
+  <section class="contact">
+    <h3>Contact</h3>
+    <p><strong>Email:</strong> suhaediirfan@gmail.com</p>
+    <p><strong>Phone:</strong> (+62)-895-0270-2764</p>
+    <p><strong>Field:</strong> Administration</p>
+  </section>
+
+  <section class="experience">
+    <h3>Experience</h3>
+    <p class="job-title">PT Tal Sarana Logistik <span class="job-period">(2022–Present)</span><br><em>Fleet Administration</em></p>
+    <ul>
+      <li>Memimpin pengelolaan data armada untuk lebih dari 100 kendaraan logistik aktif.</li>
+      <li>Mengimplementasikan sistem monitoring GPS yang meningkatkan akurasi pelacakan hingga 95%.</li>
+      <li>Mengembangkan format pelaporan efisiensi bahan bakar yang digunakan sebagai standar departemen.</li>
+      <li>Berperan penting dalam audit internal armada, memastikan dokumentasi kendaraan selalu up-to-date.</li>
+    </ul>
+    <p class="job-title">PT TaniHub Group <span class="job-period">(2019–2022)</span><br><em>Supply Chain Administration</em></p>
+    <ul>
+      <li>Berhasil menyusun ulang proses rekapitulasi stok harian yang mempercepat pelaporan sebanyak 40%.</li>
+      <li>Mengelola input dan kontrol dokumen pengiriman untuk rantai pasok nasional.</li>
+      <li>Bekerja sama dengan tim warehouse dan ekspedisi dalam optimalisasi rute pengiriman.</li>
+      <li>Menjadi perantara koordinasi antara gudang pusat dan vendor regional.</li>
+    </ul>
+  </section>
+
+  <section class="education">
+    <h3>Education</h3>
+    <p><strong>2021–2022:</strong> Teknik - <em>Smk Yadika 7 Bogor</em></p>
+    
+  <section class="skills">
+    <h3>Skills</h3>
+    <ul>
+      <li><strong>Microsoft Office & Google Workspace:</strong> Terampil menggunakan Word, Excel, PowerPoint, Google Docs, Sheets, dan Forms untuk pengolahan data, laporan, dan dokumentasi kerja.</li>
+      <li><strong>Administrasi Logistik & Armada:</strong> Berpengalaman dalam pencatatan data pengiriman, surat jalan, dan pengelolaan dokumen kendaraan serta jadwal perawatan.</li>
+      <li><strong>Penggunaan Software & Tools:</strong> Terbiasa menggunakan Microsoft Excel, Google Sheets, dan sistem manajemen logistik seperti ERP atau WMS untuk input dan pelaporan data.</li>
+      <li><strong>Koordinasi & Komunikasi:</strong> Mampu berkoordinasi efektif dengan tim warehouse, ekspedisi, dan vendor untuk kelancaran operasional harian.</li>
+      <li><strong>Ketelitian & Manajemen Waktu:</strong> Teliti dalam penginputan data dan mampu menyelesaikan tugas administratif dalam tenggat waktu yang ketat.</li>
+    </ul>
+  </section>
+
+  <section class="references">
+    <h3>References</h3>
+    <p>Available upon request</p>
+  </section>
+
+  <a href="https://wa.me/6289502702764" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/irfan-suhaedi/" class="linkedin-float" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</body>
+</html>
