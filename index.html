@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irfan Suhaedi - Resume</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/WGvnYCS.png">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Patrick Hand', cursive;
+      margin: 0;
+      padding: 0;
+      background: #fefae0;
+      color: #333;
+      line-height: 1.6;
+      background-image: url('https://www.transparenttextures.com/patterns/sketchy.png');
+    }
+
+    header {
+      background: #d9ed92;
+      color: #2b2d42;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 5px dashed #90be6d;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    section {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: popUp 0.8s forwards;
+      animation-delay: var(--delay);
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffffdd;
+      border: 2px dashed #90be6d;
+      border-radius: 20px;
+      box-shadow: 6px 6px 0px #f9c74f;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      border-left: 6px solid #90be6d;
+      padding-left: 12px;
+      margin-top: 0;
+      color: #2b2d42;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .job-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    .job-period {
+      color: #555;
+      font-style: italic;
+    }
+
+    .skills ul li strong {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    @keyframes popUp {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .whatsapp-float, .linkedin-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      animation: bounce 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .linkedin-float {
+      bottom: 100px;
+      background-color: #0077b5;
+    }
+
+    .whatsapp-float {
+      background-color: #25d366;
+    }
+
+    .whatsapp-float:hover, .linkedin-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float i, .linkedin-float i {
+      margin-top: 16px;
+    }
+
+    .popup {
+      position: fixed;
+      bottom: 140px;
+      right: 20px;
+      background: #fff;
+      border: 2px dashed #90be6d;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      max-width: 250px;
+      font-size: 1rem;
+      z-index: 999;
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header h2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Irfan Suhaedi</h1>
+    <h2>Fleet & Supply Chain Administration Specialist</h2>
+  </header>
+
+  <section class="contact" style="--delay: 0s">
+    <h3>Contact</h3>
+    <p><strong>Email:</strong> suhaediirfan@gmail.com</p>
+    <p><strong>Phone:</strong> (+62)-895-0270-2764</p>
+    <p><strong>Field:</strong> Administration</p>
+  </section>
+
+  <section class="summary" style="--delay: 0.1s">
+    <h3>Professional Summary</h3>
+    <p>Berpengalaman lebih dari 5 tahun dalam administrasi logistik dan armada dengan spesialisasi dalam pengelolaan data, pelaporan, dan optimalisasi operasional. Memiliki keahlian dalam sistem manajemen logistik dan berorientasi pada efisiensi proses kerja.</p>
+  </section>
+
+  <section class="experience" style="--delay: 0.2s">
+    <h3>Experience</h3>
+    <p class="job-title">PT Tal Sarana Logistik <span class="job-period">(2022–Present)</span><br><em>Fleet Administration</em></p>
+    <ul>
+      <li>Memimpin pengelolaan data armada untuk lebih dari 100 kendaraan logistik aktif.</li>
+      <li>Mengimplementasikan sistem monitoring GPS yang meningkatkan akurasi pelacakan hingga 95%.</li>
+      <li>Mengembangkan format pelaporan efisiensi bahan bakar yang digunakan sebagai standar departemen.</li>
+      <li>Berperan penting dalam audit internal armada, memastikan dokumentasi kendaraan selalu up-to-date.</li>
+    </ul>
+    <p class="job-title">PT TaniHub Group <span class="job-period">(2019–2022)</span><br><em>Supply Chain Administration</em></p>
+    <ul>
+      <li>Berhasil menyusun ulang proses rekapitulasi stok harian yang mempercepat pelaporan sebanyak 40%.</li>
+      <li>Mengelola input dan kontrol dokumen pengiriman untuk rantai pasok nasional.</li>
+      <li>Bekerja sama dengan tim warehouse dan ekspedisi dalam optimalisasi rute pengiriman.</li>
+      <li>Menjadi perantara koordinasi antara gudang pusat dan vendor regional.</li>
+    </ul>
+    <p class="job-title">PT Sumber Alfaria Trijaya Tbk <span class="job-period">(2018–2019)</span><br><em>Inventory Control</em></p>
+    <ul>
+      <li>Melakukan pengawasan dan pencatatan keluar masuk barang secara akurat menggunakan sistem WMS.</li>
+      <li>Bekerja sama dengan tim warehouse dalam mendukung kelancaran distribusi dan akurasi stok.</li>
+      <li>Membuat laporan harian dan mingguan mengenai pergerakan stok barang.</li>
+      <li>Melakukan cycle count dan penyesuaian stok sesuai dengan hasil audit.</li>
+    </ul>
+  </section>
+
+  <section class="education" style="--delay: 0.4s">
+    <h3>Education</h3>
+    <p><strong>2021–2022:</strong> Teknik - <em>Smk Yadika 7 Bogor</em></p>
+  </section>
+
+  <section class="skills" style="--delay: 0.6s">
+    <h3>Skills</h3>
+    <ul>
+      <li><strong>Microsoft Office & Google Workspace:</strong> Terampil menggunakan Word, Excel, PowerPoint, Google Docs, Sheets, dan Forms untuk pengolahan data, laporan, dan dokumentasi kerja.</li>
+      <li><strong>Administrasi Logistik & Armada:</strong> Berpengalaman dalam pencatatan data pengiriman, surat jalan, dan pengelolaan dokumen kendaraan serta jadwal perawatan.</li>
+      <li><strong>Penggunaan Software & Tools:</strong> Terbiasa menggunakan Microsoft Excel, Google Sheets, dan sistem manajemen logistik seperti ERP atau WMS untuk input dan pelaporan data.</li>
+      <li><strong>Koordinasi & Komunikasi:</strong> Mampu berkoordinasi efektif dengan tim warehouse, ekspedisi, dan vendor untuk kelancaran operasional harian.</li>
+      <li><strong>Ketelitian & Manajemen Waktu:</strong> Teliti dalam penginputan data dan mampu menyelesaikan tugas administratif dalam tenggat waktu yang ketat.</li>
+    </ul>
+  </section>
+
+  <section class="references" style="--delay: 0.8s">
+    <h3>References</h3>
+    <p>Available upon request</p>
+  </section>
+
+  <div class="popup" id="popupMessage">
+    Tertarik bekerja dengan saya? <br><a href="https://wa.me/6289502702764" style="color:#25d366; font-weight:bold; text-decoration:none;">Hubungi lewat WhatsApp</a>
+  </div>
+
+  <a href="https://wa.me/6289502702764" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/irfan-suhaedi/" class="linkedin-float" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("popupMessage").style.display = "block";
+    }, 3000);
+  </script>
+</body>
+</html>
