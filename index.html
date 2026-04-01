@@ -3,157 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Manifest - PT TAL SARANA LOGISTIK</title>
+    <title>PT TAL - Manifest</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden { display: none; }
-        .loader {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #3498db;
-            border-radius: 50%;
-            width: 20px; height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block; vertical-align: middle; margin-right: 8px;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
 </head>
-<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gray-100 min-h-screen p-4 flex items-center justify-center">
 
-    <div class="w-full max-w-md bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-200">
-        <div class="bg-slate-900 p-8 text-white relative text-center">
-            <h1 class="text-xl font-extrabold tracking-tight">PT TAL SARANA LOGISTIK</h1>
-            <p class="text-[10px] text-slate-400 font-medium tracking-widest uppercase mt-1">Sistem Manifest Digital</p>
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-xl overflow-hidden border">
+        <div class="bg-slate-900 p-6 text-white text-center">
+            <h1 class="text-lg font-bold uppercase tracking-widest">PT TAL SARANA LOGISTIK</h1>
         </div>
 
-        <div class="p-8">
+        <div class="p-6" id="form-container">
             <div id="page1">
-                <div class="mb-6 text-center">
-                    <h2 class="text-xl font-bold text-slate-800">Check-In Kedatangan</h2>
+                <input type="text" id="customer" class="w-full border p-4 rounded-xl mb-4" placeholder="Nama Customer (Caption)">
+                <input type="file" id="fotoMasuk" accept="image/*" capture="camera" class="w-full mb-4 text-sm">
+                <div class="flex justify-between text-[10px] bg-gray-50 p-2 rounded mb-4">
+                    <span id="jamMasukDisp"></span>
+                    <span id="gpsDisp">Mencari GPS...</span>
                 </div>
-                
-                <div class="space-y-5">
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Nama Customer (Caption) *</label>
-                        <input type="text" id="customer" required 
-                            class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-4 focus:border-blue-500 outline-none text-slate-700 font-semibold" 
-                            placeholder="Contoh: Toko Berkah Makmur">
-                    </div>
-
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Ambil Foto Datang *</label>
-                        <input type="file" id="fotoMasuk" accept="image/*" capture="camera" 
-                            class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white">
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                        <div>
-                            <span class="block text-[9px] font-bold text-slate-400 uppercase">Jam Datang</span>
-                            <input type="text" id="jamMasuk" readonly class="bg-transparent font-bold text-xs text-slate-700 outline-none w-full">
-                        </div>
-                        <div>
-                            <span class="block text-[9px] font-bold text-slate-400 uppercase">GPS Driver</span>
-                            <input type="text" id="lokasiMasuk" readonly class="bg-transparent font-bold text-[9px] text-blue-600 outline-none w-full" value="Mencari...">
-                        </div>
-                    </div>
-
-                    <button onclick="keTahap2()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all">
-                        MULAI (STATUS: BERLANGSUNG)
-                    </button>
-                </div>
+                <button onclick="keTahap2()" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl">MULAI TUGAS</button>
             </div>
 
-            <div id="page2" class="hidden text-center">
-                <div class="mb-6">
-                    <p class="text-xs text-blue-500 font-bold uppercase">Customer:</p>
-                    <h2 id="labelCust" class="text-2xl font-black text-slate-800 uppercase tracking-tight"></h2>
-                </div>
-
-                <div class="space-y-5">
-                    <div class="text-left">
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1 text-center">Ambil Foto Selesai *</label>
-                        <input type="file" id="fotoKeluar" accept="image/*" capture="camera" 
-                            class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-green-600 file:text-white">
-                    </div>
-
-                    <div class="p-4 bg-green-50 rounded-xl border border-green-100">
-                        <span class="block text-[9px] font-bold text-green-500 uppercase">Waktu Selesai (Auto)</span>
-                        <p id="jamKeluarDisplay" class="font-bold text-slate-700 text-sm">-- : -- WIB</p>
-                    </div>
-
-                    <button onclick="kirimData()" id="btnKirim" class="w-full bg-slate-900 hover:bg-black text-white font-bold py-4 rounded-xl shadow-lg transition-all">
-                        <span id="btnText">UPLOAD KE SPREADSHEET</span>
-                    </button>
-                </div>
+            <div id="page2" class="hidden">
+                <h2 id="custName" class="text-center font-bold mb-4"></h2>
+                <input type="file" id="fotoKeluar" accept="image/*" capture="camera" class="w-full mb-4 text-sm">
+                <button onclick="kirimData()" id="btnKirim" class="w-full bg-green-600 text-white font-bold py-4 rounded-xl">SELESAI & UPLOAD</button>
             </div>
 
-            <div id="success" class="hidden text-center py-10">
-                <div class="text-6xl mb-4">✅</div>
-                <h2 class="text-2xl font-black text-slate-800 uppercase">DATA TERKIRIM!</h2>
-                <p class="text-xs text-slate-500 mt-2">Laporan manifest sudah masuk ke Spreadsheet.</p>
-                <button onclick="location.reload()" class="mt-8 text-blue-600 font-bold text-xs uppercase tracking-widest border-b-2 border-blue-600">Buat Laporan Baru</button>
+            <div id="success" class="hidden text-center py-10 text-green-600 font-bold">
+                DATA BERHASIL MASUK SPREADSHEET!
+                <br><button onclick="location.reload()" class="mt-4 text-blue-600 underline">Input Lagi</button>
             </div>
         </div>
     </div>
 
     <script>
-        // LINK SUDAH SAYA PASANG DI SINI
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLfD9sVVUgxnWGcgw9tE9NClVluCjF1DKqZLDtvrzBfuA8EAjBQSNgtSc7rUwi2v520A/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwqJBh5-otMBVRFX2Is13PVmcWRRJ2hca9OCzQIQNRyWgXxXtxTxdfO5SiVDLnBxisH7A/exec";
+        let jamMasuk = "";
 
         window.onload = function() {
-            updateTime('jamMasuk');
+            const now = new Date();
+            jamMasuk = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('jamMasukDisp').innerText = "Jam: " + jamMasuk;
+            
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(pos => {
-                    document.getElementById('lokasiMasuk').value = pos.coords.latitude.toFixed(5) + "," + pos.coords.longitude.toFixed(5);
-                }, () => { document.getElementById('lokasiMasuk').value = "GPS Off"; });
+                navigator.geolocation.getCurrentPosition(p => {
+                    document.getElementById('gpsDisp').innerText = p.coords.latitude.toFixed(5) + "," + p.coords.longitude.toFixed(5);
+                });
             }
         };
 
-        function updateTime(id) {
-            const now = new Date();
-            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0') + " WIB";
-            if(id) document.getElementById(id).value = timeStr;
-            return timeStr;
-        }
-
         function keTahap2() {
-            const cust = document.getElementById('customer').value;
-            const foto = document.getElementById('fotoMasuk').files[0];
-            if (!cust || !foto) return alert("Wajib isi Nama Customer & Ambil Foto!");
-            
-            document.getElementById('labelCust').innerText = cust;
+            if(!document.getElementById('customer').value || !document.getElementById('fotoMasuk').files[0]) return alert("Isi nama customer & ambil foto!");
+            document.getElementById('custName').innerText = document.getElementById('customer').value;
             document.getElementById('page1').classList.add('hidden');
             document.getElementById('page2').classList.remove('hidden');
-            document.getElementById('jamKeluarDisplay').innerText = updateTime();
         }
 
         function kirimData() {
-            const foto2 = document.getElementById('fotoKeluar').files[0];
-            if (!foto2) return alert("Silakan ambil foto bukti selesai!");
-
+            if(!document.getElementById('fotoKeluar').files[0]) return alert("Ambil foto selesai!");
+            
             const btn = document.getElementById('btnKirim');
-            const btnText = document.getElementById('btnText');
+            btn.innerText = "MENGIRIM...";
             btn.disabled = true;
-            btnText.innerHTML = '<span class="loader"></span> MENGIRIM...';
 
             const payload = {
                 customer: document.getElementById('customer').value,
-                waktu_datang: document.getElementById('jamMasuk').value,
-                waktu_selesai: updateTime(),
-                lokasi: document.getElementById('lokasiMasuk').value
+                waktu_datang: jamMasuk,
+                waktu_selesai: new Date().getHours().toString().padStart(2, '0') + ":" + new Date().getMinutes().toString().padStart(2, '0'),
+                lokasi: document.getElementById('gpsDisp').innerText
             };
 
-            // MENGGUNAKAN METODE XHR UNTUK MENGHINDARI MASALAH CORS
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", SCRIPT_URL, true);
-            xhr.setRequestHeader('Content-Type', 'text/plain;charset=utf-8');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4) {
-                    document.getElementById('page2').classList.add('hidden');
-                    document.getElementById('success').classList.remove('hidden');
-                }
-            };
-            xhr.send(JSON.stringify(payload));
+            // Gunakan Fetch dengan mode 'no-cors' agar tidak terhambat keamanan browser
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                cache: "no-cache",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                document.getElementById('page2').classList.add('hidden');
+                document.getElementById('success').classList.remove('hidden');
+            }).catch(e => {
+                alert("Gagal koneksi!");
+                btn.disabled = false;
+                btn.innerText = "SELESAI & UPLOAD";
+            });
         }
     </script>
 </body>
