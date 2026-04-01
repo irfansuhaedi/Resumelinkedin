@@ -1,190 +1,251 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Manifest - PT TAL SARANA LOGISTIK</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; }
-        .hidden { display: none; }
-        .btn-primary { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-        .loader {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #3b82f6;
-            border-radius: 50%;
-            width: 20px; height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block; vertical-align: middle; margin-right: 10px;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irfan Suhaedi - Resume</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/WGvnYCS.png">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Patrick Hand', cursive;
+      margin: 0;
+      padding: 0;
+      background: #fefae0;
+      color: #333;
+      line-height: 1.6;
+      background-image: url('https://www.transparenttextures.com/patterns/sketchy.png');
+    }
+
+    header {
+      background: #d9ed92;
+      color: #2b2d42;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 5px dashed #90be6d;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    section {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: popUp 0.8s forwards;
+      animation-delay: var(--delay);
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffffdd;
+      border: 2px dashed #90be6d;
+      border-radius: 20px;
+      box-shadow: 6px 6px 0px #f9c74f;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      border-left: 6px solid #90be6d;
+      padding-left: 12px;
+      margin-top: 0;
+      color: #2b2d42;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .job-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    .job-period {
+      color: #555;
+      font-style: italic;
+    }
+
+    .skills ul li strong {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    @keyframes popUp {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .whatsapp-float, .linkedin-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      animation: bounce 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .linkedin-float {
+      bottom: 100px;
+      background-color: #0077b5;
+    }
+
+    .whatsapp-float {
+      background-color: #25d366;
+    }
+
+    .whatsapp-float:hover, .linkedin-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float i, .linkedin-float i {
+      margin-top: 16px;
+    }
+
+    .popup {
+      position: fixed;
+      bottom: 140px;
+      right: 20px;
+      background: #fff;
+      border: 2px dashed #90be6d;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      max-width: 250px;
+      font-size: 1rem;
+      z-index: 999;
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header h2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body>
+  <header>
+    <h1>Irfan Suhaedi</h1>
+    <h2>Fleet & Supply Chain Administration Specialist</h2>
+  </header>
 
-    <div class="w-full max-w-md bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200">
-        <div class="bg-slate-900 pt-10 pb-12 px-8 text-white relative">
-            <div class="flex justify-between items-center mb-3">
-                <span class="bg-blue-600 text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Digital Manifest</span>
-                <span class="text-slate-500 text-[9px] font-bold">V 2.5</span>
-            </div>
-            <h1 class="text-2xl font-extrabold tracking-tight">PT TAL SARANA LOGISTIK</h1>
-            <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest font-semibold italic">Jabodetabek Delivery System</p>
-            
-            <div class="absolute -bottom-1 left-0 w-full overflow-hidden leading-none">
-                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-8 fill-white">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C0,95.8,158.33,85.62,321.39,56.44Z"></path>
-                </svg>
-            </div>
-        </div>
+  <section class="contact" style="--delay: 0s">
+    <h3>Contact</h3>
+    <p><strong>Email:</strong> suhaediirfan@gmail.com</p>
+    <p><strong>Phone:</strong> (+62)-895-0270-2764</p>
+    <p><strong>Field:</strong> Administration</p>
+  </section>
 
-        <div class="px-8 pb-10 pt-4">
-            <div id="page1" class="space-y-6">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-800 tracking-tight">Check-In Driver</h2>
-                    <p class="text-xs text-slate-400">Silakan isi data sebelum memulai pengiriman.</p>
-                </div>
-                
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1 text-center">Nama Customer / Toko *</label>
-                        <input type="text" id="customer" required 
-                            class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:border-blue-500 focus:bg-white outline-none text-slate-700 font-bold transition-all" 
-                            placeholder="Contoh: PT. Sumber Makmur">
-                    </div>
+  <section class="summary" style="--delay: 0.1s">
+    <h3>Professional Summary</h3>
+    <p>Berpengalaman lebih dari 3 tahun dalam administrasi logistik dan armada dengan spesialisasi dalam pengelolaan data, pelaporan, dan optimalisasi operasional. Memiliki keahlian dalam sistem manajemen logistik dan berorientasi pada efisiensi proses kerja.</p>
+  </section>
 
-                    <div>
-                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1 text-center">Foto Bukti Kedatangan *</label>
-                        <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-slate-200 border-dashed rounded-2xl cursor-pointer bg-slate-50 hover:bg-slate-100 transition-all">
-                            <div class="flex flex-col items-center justify-center">
-                                <p id="statusFoto1" class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">📷 Ambil Foto Kamera</p>
-                            </div>
-                            <input type="file" id="fotoMasuk" accept="image/*" capture="camera" class="hidden" onchange="cekFoto('fotoMasuk', 'statusFoto1')">
-                        </label>
-                    </div>
+  <section class="experience" style="--delay: 0.2s">
+    <h3>Experience</h3>
+    <p class="job-title">PT Tal Sarana Logistik <span class="job-period">(2022–Present)</span><br><em>Fleet Administration</em></p>
+    <ul>
+      <li>Memimpin pengelolaan data armada untuk lebih dari 100 kendaraan logistik aktif.</li>
+      <li>Mengimplementasikan sistem monitoring GPS yang meningkatkan akurasi pelacakan hingga 95%.</li>
+      <li>Mengembangkan format pelaporan efisiensi bahan bakar yang digunakan sebagai standar departemen.</li>
+      <li>Berperan penting dalam audit internal armada, memastikan dokumentasi kendaraan selalu up-to-date.</li>
+    </ul>
+    <p class="job-title">PT TaniHub Group <span class="job-period">(2019–2022)</span><br><em>Supply Chain Administration</em></p>
+    <ul>
+      <li>Berhasil menyusun ulang proses rekapitulasi stok harian yang mempercepat pelaporan sebanyak 40%.</li>
+      <li>Mengelola input dan kontrol dokumen pengiriman untuk rantai pasok nasional.</li>
+      <li>Bekerja sama dengan tim warehouse dan ekspedisi dalam optimalisasi rute pengiriman.</li>
+      <li>Menjadi perantara koordinasi antara gudang pusat dan vendor regional.</li>
+    </ul>
+    <p class="job-title">CV Cateliya Fiberglass <span class="job-period">(2018–2019)</span><br><em>Inventory Control</em></p>
+    <ul>
+      <li>Melakukan pengawasan dan pencatatan keluar masuk barang secara akurat menggunakan sistem WMS.</li>
+      <li>Bekerja sama dengan tim warehouse dalam mendukung kelancaran distribusi dan akurasi stok.</li>
+      <li>Membuat laporan harian dan mingguan mengenai pergerakan stok barang.</li>
+      <li>Melakukan cycle count dan penyesuaian stok sesuai dengan hasil audit.</li>
+    </ul>
+  </section>
 
-                    <div class="grid grid-cols-2 gap-3 p-4 bg-slate-900 rounded-2xl text-white shadow-lg">
-                        <div class="border-r border-slate-700 pr-2">
-                            <span class="block text-[8px] text-slate-500 font-bold uppercase tracking-tighter">Waktu Datang</span>
-                            <input type="text" id="jamMasuk" readonly class="bg-transparent font-bold text-xs outline-none w-full text-blue-400">
-                        </div>
-                        <div class="pl-1">
-                            <span class="block text-[8px] text-slate-500 font-bold uppercase tracking-tighter">Posisi GPS</span>
-                            <input type="text" id="lokasiMasuk" readonly class="bg-transparent font-bold text-[9px] outline-none w-full text-blue-400" value="Mencari...">
-                        </div>
-                    </div>
+  <section class="education" style="--delay: 0.4s">
+    <h3>Education</h3>
+    <p><strong>2019:</strong> Teknik - <em>Smk Yadika 7 Bogor</em></p>
+  </section>
 
-                    <button onclick="lanjutTahap2()" class="w-full btn-primary text-white font-bold py-5 rounded-2xl shadow-xl transform active:scale-95 transition-all text-sm tracking-widest uppercase mt-4">
-                        Mulai Pengiriman
-                    </button>
-                </div>
-            </div>
+  <section class="skills" style="--delay: 0.6s">
+    <h3>Skills</h3>
+    <ul>
+      <li><strong>Microsoft Office & Google Workspace:</strong> Terampil menggunakan Word, Excel, PowerPoint, Google Docs, Sheets, dan Forms untuk pengolahan data, laporan, dan dokumentasi kerja.</li>
+      <li><strong>Administrasi Logistik & Armada:</strong> Berpengalaman dalam pencatatan data pengiriman, surat jalan, dan pengelolaan dokumen kendaraan serta jadwal perawatan.</li>
+      <li><strong>Penggunaan Software & Tools:</strong> Terbiasa menggunakan Microsoft Excel, Google Sheets, dan sistem manajemen logistik seperti ERP atau WMS untuk input dan pelaporan data.</li>
+      <li><strong>Koordinasi & Komunikasi:</strong> Mampu berkoordinasi efektif dengan tim warehouse, ekspedisi, dan vendor untuk kelancaran operasional harian.</li>
+      <li><strong>Ketelitian & Manajemen Waktu:</strong> Teliti dalam penginputan data dan mampu menyelesaikan tugas administratif dalam tenggat waktu yang ketat.</li>
+    </ul>
+  </section>
 
-            <div id="page2" class="hidden space-y-6">
-                <div class="text-center p-6 bg-blue-50 rounded-[2rem] border border-blue-100 shadow-inner">
-                    <p class="text-[10px] text-blue-500 font-black uppercase tracking-widest mb-1">Customer Tujuan</p>
-                    <h2 id="displayCustomer" class="text-xl font-extrabold text-slate-800 uppercase tracking-tight truncate px-2"></h2>
-                </div>
+  <section class="references" style="--delay: 0.8s">
+    <h3>References</h3>
+    <p>Available upon request</p>
+  </section>
 
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1 text-center font-bold">Foto Bukti Selesai *</label>
-                        <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-green-200 border-dashed rounded-[2rem] cursor-pointer bg-green-50 hover:bg-green-100 transition-all">
-                            <div class="flex flex-col items-center justify-center">
-                                <p id="statusFoto2" class="text-[10px] text-green-700 font-black uppercase tracking-widest italic">📸 Klik Foto Selesai</p>
-                            </div>
-                            <input type="file" id="fotoKeluar" accept="image/*" capture="camera" class="hidden" onchange="cekFoto('fotoKeluar', 'statusFoto2')">
-                        </label>
-                    </div>
+  <div class="popup" id="popupMessage">
+    Hubungi saya jika anda tertarik? <br><a href="https://wa.me/6289502702764" style="color:#25d366; font-weight:bold; text-decoration:none;">Hubungi lewat WhatsApp</a>
+  </div>
 
-                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-center">
-                        <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-widest">Jam Finish</span>
-                        <p id="displayJamSelesai" class="font-black text-slate-700 text-xl">-- : -- WIB</p>
-                    </div>
+  <a href="https://wa.me/6289502702764" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-                    <button onclick="unggahData()" id="btnKirim" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-2xl shadow-2xl transition-all transform active:scale-95 tracking-widest uppercase text-sm">
-                        <span id="labelTombol">Upload Laporan</span>
-                    </button>
-                </div>
-            </div>
+  <a href="https://www.linkedin.com/in/irfan-suhaedi/" class="linkedin-float" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
 
-            <div id="success" class="hidden text-center py-10">
-                <div class="w-24 h-24 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-2xl shadow-green-200 animate-bounce">
-                    ✓
-                </div>
-                <h2 class="text-2xl font-black text-slate-800 tracking-tight uppercase">Terkirim!</h2>
-                <p class="text-[11px] text-slate-400 mt-2 px-6">Laporan manifest digital PT TAL sudah berhasil masuk ke database pusat.</p>
-                <button onclick="location.reload()" class="mt-10 inline-block px-10 py-3 bg-slate-900 text-white font-bold rounded-xl text-[10px] uppercase tracking-widest hover:bg-black transition-all">Input Baru</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // LINK SUDAH TERPASANG LANGSUNG
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6Gs3lx98eeTO1gmdghEuh73zl9hHgVF0sXlu47PKXYANZMlrxbWwvVPzixqxKQmd5fw/exec";
-
-        window.onload = function() {
-            setWaktu('jamMasuk');
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(pos => {
-                    document.getElementById('lokasiMasuk').value = pos.coords.latitude.toFixed(5) + "," + pos.coords.longitude.toFixed(5);
-                }, () => { document.getElementById('lokasiMasuk').value = "GPS TIDAK AKTIF"; });
-            }
-        };
-
-        function cekFoto(inputId, labelId) {
-            const input = document.getElementById(inputId);
-            const label = document.getElementById(labelId);
-            if(input.files.length > 0) label.innerHTML = "✅ FOTO BERHASIL";
-        }
-
-        function setWaktu(targetId) {
-            const d = new Date();
-            const wkt = d.getHours().toString().padStart(2, '0') + ":" + d.getMinutes().toString().padStart(2, '0') + " WIB";
-            if(targetId) document.getElementById(targetId).value = wkt;
-            return wkt;
-        }
-
-        function lanjutTahap2() {
-            const cust = document.getElementById('customer').value;
-            const foto = document.getElementById('fotoMasuk').files[0];
-            if (!cust || !foto) return alert("Mohon isi Nama Customer dan Ambil Foto Kedatangan!");
-            
-            document.getElementById('displayCustomer').innerText = cust;
-            document.getElementById('page1').classList.add('hidden');
-            document.getElementById('page2').classList.remove('hidden');
-            document.getElementById('displayJamSelesai').innerText = setWaktu();
-        }
-
-        function unggahData() {
-            const fotoSelesai = document.getElementById('fotoKeluar').files[0];
-            if (!fotoSelesai) return alert("Mohon ambil foto bukti selesai pengiriman!");
-
-            const btn = document.getElementById('btnKirim');
-            const label = document.getElementById('labelTombol');
-            btn.disabled = true;
-            label.innerHTML = '<span class="loader"></span> MENGIRIM DATA...';
-
-            const payload = {
-                customer: document.getElementById('customer').value,
-                waktu_datang: document.getElementById('jamMasuk').value,
-                waktu_selesai: setWaktu(),
-                lokasi: document.getElementById('lokasiMasuk').value
-            };
-
-            // Menggunakan XMLHttpRequest agar kompatibel dengan sistem redirect Google Apps Script
-            var request = new XMLHttpRequest();
-            request.open("POST", SCRIPT_URL, true);
-            request.setRequestHeader('Content-Type', 'text/plain;charset=utf-8');
-            request.onreadystatechange = function() {
-                if (request.readyState == 4) {
-                    document.getElementById('page2').classList.add('hidden');
-                    document.getElementById('success').classList.remove('hidden');
-                }
-            };
-            request.send(JSON.stringify(payload));
-        }
-    </script>
+  <script>
+    setTimeout(() => {
+      document.getElementById("popupMessage").style.display = "block";
+    }, 3000);
+  </script>
 </body>
 </html>
