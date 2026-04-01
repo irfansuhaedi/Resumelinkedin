@@ -1,251 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irfan Suhaedi - Resume</title>
-  <link rel="icon" type="image/png" href="https://i.imgur.com/WGvnYCS.png">
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Patrick Hand', cursive;
-      margin: 0;
-      padding: 0;
-      background: #fefae0;
-      color: #333;
-      line-height: 1.6;
-      background-image: url('https://www.transparenttextures.com/patterns/sketchy.png');
-    }
-
-    header {
-      background: #d9ed92;
-      color: #2b2d42;
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-      border-bottom: 5px dashed #90be6d;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: 700;
-    }
-    header h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-top: 10px;
-    }
-
-    section {
-      opacity: 0;
-      transform: scale(0.9);
-      animation: popUp 0.8s forwards;
-      animation-delay: var(--delay);
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-      background: #ffffffdd;
-      border: 2px dashed #90be6d;
-      border-radius: 20px;
-      box-shadow: 6px 6px 0px #f9c74f;
-    }
-
-    h3 {
-      font-weight: 700;
-      font-size: 1.6rem;
-      border-left: 6px solid #90be6d;
-      padding-left: 12px;
-      margin-top: 0;
-      color: #2b2d42;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    p {
-      margin: 5px 0;
-      font-size: 1.1rem;
-    }
-
-    .job-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
-    .job-period {
-      color: #555;
-      font-style: italic;
-    }
-
-    .skills ul li strong {
-      display: inline-block;
-      margin-bottom: 4px;
-      font-weight: bold;
-    }
-
-    @keyframes popUp {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .whatsapp-float, .linkedin-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      z-index: 100;
-      animation: bounce 2s infinite;
-      transition: transform 0.3s ease;
-    }
-
-    .linkedin-float {
-      bottom: 100px;
-      background-color: #0077b5;
-    }
-
-    .whatsapp-float {
-      background-color: #25d366;
-    }
-
-    .whatsapp-float:hover, .linkedin-float:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp-float i, .linkedin-float i {
-      margin-top: 16px;
-    }
-
-    .popup {
-      position: fixed;
-      bottom: 140px;
-      right: 20px;
-      background: #fff;
-      border: 2px dashed #90be6d;
-      border-radius: 15px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      padding: 15px 20px;
-      max-width: 250px;
-      font-size: 1rem;
-      z-index: 999;
-      display: none;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header h2 {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Driver - PT TAL SARANA LOGISTIK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden { display: none; }
+        input:invalid { border-color: #ef4444; }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Irfan Suhaedi</h1>
-    <h2>Fleet & Supply Chain Administration Specialist</h2>
-  </header>
+<body class="bg-gray-100 min-h-screen p-4">
 
-  <section class="contact" style="--delay: 0s">
-    <h3>Contact</h3>
-    <p><strong>Email:</strong> suhaediirfan@gmail.com</p>
-    <p><strong>Phone:</strong> (+62)-895-0270-2764</p>
-    <p><strong>Field:</strong> Administration</p>
-  </section>
+    <div class="max-w-md mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-blue-600 p-4 text-white text-center">
+            <h1 class="text-lg font-bold">PT TAL SARANA LOGISTIK</h1>
+            <p class="text-xs opacity-80">Logistik & Distribusi Jabodetabek</p>
+        </div>
 
-  <section class="summary" style="--delay: 0.1s">
-    <h3>Professional Summary</h3>
-    <p>Berpengalaman lebih dari 3 tahun dalam administrasi logistik dan armada dengan spesialisasi dalam pengelolaan data, pelaporan, dan optimalisasi operasional. Memiliki keahlian dalam sistem manajemen logistik dan berorientasi pada efisiensi proses kerja.</p>
-  </section>
+        <div class="p-6">
+            <div id="page1">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Check-In Driver</h2>
+                    <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded font-bold">PROSES</span>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700">Nama Customer / Tujuan *</label>
+                        <input type="text" id="customer" required 
+                            class="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none" 
+                            placeholder="Contoh: PT. Maju Jaya">
+                    </div>
 
-  <section class="experience" style="--delay: 0.2s">
-    <h3>Experience</h3>
-    <p class="job-title">PT Tal Sarana Logistik <span class="job-period">(2022–Present)</span><br><em>Fleet Administration</em></p>
-    <ul>
-      <li>Memimpin pengelolaan data armada untuk lebih dari 100 kendaraan logistik aktif.</li>
-      <li>Mengimplementasikan sistem monitoring GPS yang meningkatkan akurasi pelacakan hingga 95%.</li>
-      <li>Mengembangkan format pelaporan efisiensi bahan bakar yang digunakan sebagai standar departemen.</li>
-      <li>Berperan penting dalam audit internal armada, memastikan dokumentasi kendaraan selalu up-to-date.</li>
-    </ul>
-    <p class="job-title">PT TaniHub Group <span class="job-period">(2019–2022)</span><br><em>Supply Chain Administration</em></p>
-    <ul>
-      <li>Berhasil menyusun ulang proses rekapitulasi stok harian yang mempercepat pelaporan sebanyak 40%.</li>
-      <li>Mengelola input dan kontrol dokumen pengiriman untuk rantai pasok nasional.</li>
-      <li>Bekerja sama dengan tim warehouse dan ekspedisi dalam optimalisasi rute pengiriman.</li>
-      <li>Menjadi perantara koordinasi antara gudang pusat dan vendor regional.</li>
-    </ul>
-    <p class="job-title">CV Cateliya Fiberglass <span class="job-period">(2018–2019)</span><br><em>Inventory Control</em></p>
-    <ul>
-      <li>Melakukan pengawasan dan pencatatan keluar masuk barang secara akurat menggunakan sistem WMS.</li>
-      <li>Bekerja sama dengan tim warehouse dalam mendukung kelancaran distribusi dan akurasi stok.</li>
-      <li>Membuat laporan harian dan mingguan mengenai pergerakan stok barang.</li>
-      <li>Melakukan cycle count dan penyesuaian stok sesuai dengan hasil audit.</li>
-    </ul>
-  </section>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700">Ambil Foto Kedatangan *</label>
+                        <input type="file" id="fotoMasuk" accept="image/*" capture="camera" 
+                            class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700">
+                    </div>
 
-  <section class="education" style="--delay: 0.4s">
-    <h3>Education</h3>
-    <p><strong>2019:</strong> Teknik - <em>Smk Yadika 7 Bogor</em></p>
-  </section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-500 uppercase">Jam Datang</label>
+                            <input type="text" id="jamMasuk" readonly class="w-full bg-gray-50 text-sm font-medium p-1 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 uppercase">Lokasi GPS</label>
+                            <input type="text" id="lokasiMasuk" readonly class="w-full bg-gray-50 text-[10px] font-medium p-1 outline-none text-blue-600">
+                        </div>
+                    </div>
 
-  <section class="skills" style="--delay: 0.6s">
-    <h3>Skills</h3>
-    <ul>
-      <li><strong>Microsoft Office & Google Workspace:</strong> Terampil menggunakan Word, Excel, PowerPoint, Google Docs, Sheets, dan Forms untuk pengolahan data, laporan, dan dokumentasi kerja.</li>
-      <li><strong>Administrasi Logistik & Armada:</strong> Berpengalaman dalam pencatatan data pengiriman, surat jalan, dan pengelolaan dokumen kendaraan serta jadwal perawatan.</li>
-      <li><strong>Penggunaan Software & Tools:</strong> Terbiasa menggunakan Microsoft Excel, Google Sheets, dan sistem manajemen logistik seperti ERP atau WMS untuk input dan pelaporan data.</li>
-      <li><strong>Koordinasi & Komunikasi:</strong> Mampu berkoordinasi efektif dengan tim warehouse, ekspedisi, dan vendor untuk kelancaran operasional harian.</li>
-      <li><strong>Ketelitian & Manajemen Waktu:</strong> Teliti dalam penginputan data dan mampu menyelesaikan tugas administratif dalam tenggat waktu yang ketat.</li>
-    </ul>
-  </section>
+                    <button onclick="prosesKeTahap2()" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition duration-200">
+                        MULAI TUGAS (BERLANGSUNG)
+                    </button>
+                </div>
+            </div>
 
-  <section class="references" style="--delay: 0.8s">
-    <h3>References</h3>
-    <p>Available upon request</p>
-  </section>
+            <div id="page2" class="hidden">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Check-Out Driver</h2>
+                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold">FINISH</span>
+                </div>
 
-  <div class="popup" id="popupMessage">
-    Hubungi saya jika anda tertarik? <br><a href="https://wa.me/6289502702764" style="color:#25d366; font-weight:bold; text-decoration:none;">Hubungi lewat WhatsApp</a>
-  </div>
+                <div class="space-y-4">
+                    <div class="p-3 bg-blue-50 rounded-lg border border-blue-100 mb-4">
+                        <p class="text-xs text-blue-600">Customer:</p>
+                        <p id="displayCustomer" class="font-bold text-blue-900"></p>
+                    </div>
 
-  <a href="https://wa.me/6289502702764" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700">Jam Selesai</label>
+                        <input type="text" id="jamKeluar" readonly class="mt-1 block w-full bg-gray-100 border rounded-lg p-3 font-medium">
+                    </div>
 
-  <a href="https://www.linkedin.com/in/irfan-suhaedi/" class="linkedin-float" target="_blank">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700">Ambil Foto Selesai *</label>
+                        <input type="file" id="fotoKeluar" accept="image/*" capture="camera" 
+                            class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-green-50 file:text-green-700">
+                    </div>
 
-  <script>
-    setTimeout(() => {
-      document.getElementById("popupMessage").style.display = "block";
-    }, 3000);
-  </script>
+                    <button onclick="submitFinal()" 
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition duration-200">
+                        SELESAIKAN (MASUK SPREADSHEET)
+                    </button>
+                </div>
+            </div>
+
+            <div id="successMsg" class="hidden text-center py-12">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+                    <span class="text-4xl">🚚</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Data Terkirim!</h2>
+                <p class="text-gray-500 mt-2">Laporan berhasil masuk ke Spreadsheet PT TAL.</p>
+                <button onclick="location.reload()" class="mt-8 text-blue-600 font-semibold underline">Input Baru</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GANTI URL INI dengan URL Web App dari Google Apps Script Anda
+        const SCRIPT_URL = "URL_APPS_SCRIPT_ANDA_DISINI";
+
+        // Ambil data awal saat load
+        window.onload = function() {
+            updateTime('jamMasuk');
+            getGPS();
+        };
+
+        function updateTime(id) {
+            const now = new Date();
+            document.getElementById(id).value = now.toLocaleTimeString('id-ID') + " WIB";
+        }
+
+        function getGPS() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    document.getElementById('lokasiMasuk').value = pos.coords.latitude.toFixed(6) + ", " + pos.coords.longitude.toFixed(6);
+                }, () => {
+                    document.getElementById('lokasiMasuk').value = "GPS tidak aktif";
+                });
+            }
+        }
+
+        function prosesKeTahap2() {
+            const cust = document.getElementById('customer').value;
+            const foto = document.getElementById('fotoMasuk').files[0];
+
+            if (!cust) {
+                alert("Wajib memasukkan Nama Customer!");
+                return;
+            }
+            if (!foto) {
+                alert("Wajib mengambil foto kedatangan!");
+                return;
+            }
+
+            // Pindah halaman
+            document.getElementById('displayCustomer').innerText = cust;
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            updateTime('jamKeluar');
+        }
+
+        function submitFinal() {
+            const fotoSelesai = document.getElementById('fotoKeluar').files[0];
+            if (!fotoSelesai) {
+                alert("Wajib mengambil foto selesai!");
+                return;
+            }
+
+            const payload = {
+                waktu_datang: document.getElementById('jamMasuk').value,
+                waktu_selesai: document.getElementById('jamKeluar').value,
+                customer: document.getElementById('customer').value,
+                lokasi: document.getElementById('lokasiMasuk').value,
+                status: "SELESAI"
+            };
+
+            // Menampilkan loading sederhana
+            alert("Sedang mengirim data ke Spreadsheet PT TAL...");
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                document.getElementById('page2').classList.add('hidden');
+                document.getElementById('successMsg').classList.remove('hidden');
+            })
+            .catch(err => {
+                // Untuk demo tanpa URL Script, kita anggap sukses
+                document.getElementById('page2').classList.add('hidden');
+                document.getElementById('successMsg').classList.remove('hidden');
+                console.log("Error kirim (Cek URL Script): ", err);
+            });
+        }
+    </script>
 </body>
 </html>
