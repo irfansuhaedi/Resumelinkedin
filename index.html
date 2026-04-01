@@ -28,76 +28,76 @@
 
         <div class="p-8">
             <div id="page1">
-                <div class="mb-6">
-                    <h2 class="text-xl font-bold text-slate-800">Check-In Driver</h2>
-                    <p class="text-xs text-slate-500">Isi caption & ambil foto kedatangan.</p>
+                <div class="mb-6 text-center">
+                    <h2 class="text-xl font-bold text-slate-800">Check-In Kedatangan</h2>
                 </div>
                 
                 <div class="space-y-5">
                     <div>
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Nama Customer *</label>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Nama Customer (Caption) *</label>
                         <input type="text" id="customer" required 
                             class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-4 focus:border-blue-500 outline-none text-slate-700 font-semibold" 
-                            placeholder="Contoh: PT. Maju Jaya">
+                            placeholder="Contoh: Toko Berkah Makmur">
                     </div>
 
                     <div>
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Foto Datang *</label>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Ambil Foto Datang *</label>
                         <input type="file" id="fotoMasuk" accept="image/*" capture="camera" 
                             class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white">
                     </div>
 
                     <div class="grid grid-cols-2 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
                         <div>
-                            <span class="block text-[9px] font-bold text-slate-400 uppercase">Waktu</span>
+                            <span class="block text-[9px] font-bold text-slate-400 uppercase">Jam Datang</span>
                             <input type="text" id="jamMasuk" readonly class="bg-transparent font-bold text-xs text-slate-700 outline-none w-full">
                         </div>
                         <div>
-                            <span class="block text-[9px] font-bold text-slate-400 uppercase">GPS</span>
-                            <input type="text" id="lokasiMasuk" readonly class="bg-transparent font-bold text-[9px] text-blue-600 outline-none w-full" value="Mencari GPS...">
+                            <span class="block text-[9px] font-bold text-slate-400 uppercase">GPS Driver</span>
+                            <input type="text" id="lokasiMasuk" readonly class="bg-transparent font-bold text-[9px] text-blue-600 outline-none w-full" value="Mencari...">
                         </div>
                     </div>
 
                     <button onclick="keTahap2()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all">
-                        MULAI TUGAS (BERLANGSUNG)
+                        MULAI (STATUS: BERLANGSUNG)
                     </button>
                 </div>
             </div>
 
-            <div id="page2" class="hidden">
-                <div class="mb-6 text-center">
-                    <h2 id="labelCust" class="text-xl font-black text-slate-800 uppercase tracking-tight"></h2>
+            <div id="page2" class="hidden text-center">
+                <div class="mb-6">
+                    <p class="text-xs text-blue-500 font-bold uppercase">Customer:</p>
+                    <h2 id="labelCust" class="text-2xl font-black text-slate-800 uppercase tracking-tight"></h2>
                 </div>
 
                 <div class="space-y-5">
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Foto Selesai *</label>
+                    <div class="text-left">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1 text-center">Ambil Foto Selesai *</label>
                         <input type="file" id="fotoKeluar" accept="image/*" capture="camera" 
                             class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-green-600 file:text-white">
                     </div>
 
                     <div class="p-4 bg-green-50 rounded-xl border border-green-100">
-                        <span class="block text-[9px] font-bold text-green-500 uppercase">Waktu Selesai</span>
+                        <span class="block text-[9px] font-bold text-green-500 uppercase">Waktu Selesai (Auto)</span>
                         <p id="jamKeluarDisplay" class="font-bold text-slate-700 text-sm">-- : -- WIB</p>
                     </div>
 
                     <button onclick="kirimData()" id="btnKirim" class="w-full bg-slate-900 hover:bg-black text-white font-bold py-4 rounded-xl shadow-lg transition-all">
-                        <span id="btnText">KONFIRMASI SELESAI</span>
+                        <span id="btnText">UPLOAD KE SPREADSHEET</span>
                     </button>
                 </div>
             </div>
 
             <div id="success" class="hidden text-center py-10">
-                <div class="text-5xl mb-4 text-green-500">✅</div>
-                <h2 class="text-xl font-black text-slate-800 uppercase">BERHASIL!</h2>
-                <p class="text-xs text-slate-500 mt-2">Data sudah masuk ke Spreadsheet.</p>
-                <button onclick="location.reload()" class="mt-8 text-blue-600 font-bold text-xs uppercase">Input Lagi</button>
+                <div class="text-6xl mb-4">✅</div>
+                <h2 class="text-2xl font-black text-slate-800 uppercase">DATA TERKIRIM!</h2>
+                <p class="text-xs text-slate-500 mt-2">Laporan manifest sudah masuk ke Spreadsheet.</p>
+                <button onclick="location.reload()" class="mt-8 text-blue-600 font-bold text-xs uppercase tracking-widest border-b-2 border-blue-600">Buat Laporan Baru</button>
             </div>
         </div>
     </div>
 
     <script>
-        // MASUKKAN URL HASIL DEPLOY DI SINI
+        // LINK SUDAH SAYA PASANG DI SINI
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLfD9sVVUgxnWGcgw9tE9NClVluCjF1DKqZLDtvrzBfuA8EAjBQSNgtSc7rUwi2v520A/exec";
 
         window.onload = function() {
@@ -105,7 +105,7 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(pos => {
                     document.getElementById('lokasiMasuk').value = pos.coords.latitude.toFixed(5) + "," + pos.coords.longitude.toFixed(5);
-                });
+                }, () => { document.getElementById('lokasiMasuk').value = "GPS Off"; });
             }
         };
 
@@ -119,7 +119,7 @@
         function keTahap2() {
             const cust = document.getElementById('customer').value;
             const foto = document.getElementById('fotoMasuk').files[0];
-            if (!cust || !foto) return alert("Wajib isi Nama Customer & Foto!");
+            if (!cust || !foto) return alert("Wajib isi Nama Customer & Ambil Foto!");
             
             document.getElementById('labelCust').innerText = cust;
             document.getElementById('page1').classList.add('hidden');
@@ -143,7 +143,7 @@
                 lokasi: document.getElementById('lokasiMasuk').value
             };
 
-            // MENGGUNAKAN METODE XHR UNTUK STABILITAS GOOGLE SCRIPT
+            // MENGGUNAKAN METODE XHR UNTUK MENGHINDARI MASALAH CORS
             var xhr = new XMLHttpRequest();
             xhr.open("POST", SCRIPT_URL, true);
             xhr.setRequestHeader('Content-Type', 'text/plain;charset=utf-8');
