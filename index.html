@@ -1,251 +1,408 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irfan Suhaedi - Resume</title>
-  <link rel="icon" type="image/png" href="https://i.imgur.com/WGvnYCS.png">
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Irfan Suhaedi - Fleet & Supply Chain Expert</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root {
+      --primary: #10b981;
+      --secondary: #0f172a;
+      --accent: #3b82f6;
+      --bg-light: #f1f5f9;
+      --white: #ffffff;
     }
-    body {
-      font-family: 'Patrick Hand', cursive;
+
+    * {
       margin: 0;
       padding: 0;
-      background: #fefae0;
-      color: #333;
-      line-height: 1.6;
-      background-image: url('https://www.transparenttextures.com/patterns/sketchy.png');
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
+    body {
+      background-color: var(--bg-light);
+      color: var(--secondary);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- HERO SECTION --- */
     header {
-      background: #d9ed92;
-      color: #2b2d42;
-      padding: 80px 20px;
+      height: 100vh;
+      background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                  url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      position: relative;
-      border-bottom: 5px dashed #90be6d;
+      color: var(--white);
+      clip-path: ellipse(150% 100% at 50% 0%);
+      padding: 20px;
     }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: 700;
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      letter-spacing: -2px;
     }
-    header h2 {
+
+    .hero-content h2 {
       font-size: 1.5rem;
-      font-weight: 400;
-      margin-top: 10px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 300;
     }
 
-    section {
-      opacity: 0;
-      transform: scale(0.9);
-      animation: popUp 0.8s forwards;
-      animation-delay: var(--delay);
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-      background: #ffffffdd;
-      border: 2px dashed #90be6d;
-      border-radius: 20px;
-      box-shadow: 6px 6px 0px #f9c74f;
-    }
-
-    h3 {
-      font-weight: 700;
-      font-size: 1.6rem;
-      border-left: 6px solid #90be6d;
-      padding-left: 12px;
-      margin-top: 0;
-      color: #2b2d42;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    p {
-      margin: 5px 0;
-      font-size: 1.1rem;
-    }
-
-    .job-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
-    .job-period {
-      color: #555;
-      font-style: italic;
-    }
-
-    .skills ul li strong {
-      display: inline-block;
-      margin-bottom: 4px;
-      font-weight: bold;
-    }
-
-    @keyframes popUp {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .scroll-down {
+      position: absolute;
+      bottom: 50px;
+      animation: bounce 2s infinite;
+      font-size: 2rem;
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-10px);}
+      60% {transform: translateY(-5px);}
     }
 
-    .whatsapp-float, .linkedin-float {
+    /* --- SECTION STYLING --- */
+    section {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h3 {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h3::after {
+      content: '';
+      width: 50%;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -10px;
+      left: 25%;
+    }
+
+    /* --- EXPERIENCE CARDS (LOGISTICS THEME) --- */
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .experience-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border-left: 8px solid var(--primary);
+      transition: 0.4s;
+      position: relative;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .exp-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .exp-content h4 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .exp-content ul {
+      list-style: none;
+    }
+
+    .exp-content ul li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .exp-content ul li::before {
+      content: '\f0d1'; /* Truck Icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* --- SKILLS GRID --- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--secondary);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill-card i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .skill-card:hover {
+      background: var(--primary);
+    }
+
+    /* --- FLOATING ELEMENTS --- */
+    .contact-container {
       position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .btn-float {
       width: 60px;
       height: 60px;
-      bottom: 20px;
-      right: 20px;
-      color: #fff;
       border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      z-index: 100;
-      animation: bounce 2s infinite;
-      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.8rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      text-decoration: none;
     }
 
-    .linkedin-float {
-      bottom: 100px;
-      background-color: #0077b5;
-    }
+    .wa { background: #25d366; }
+    .li { background: #0077b5; }
+    .btn-float:hover { transform: scale(1.1) rotate(10deg); }
 
-    .whatsapp-float {
-      background-color: #25d366;
-    }
-
-    .whatsapp-float:hover, .linkedin-float:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp-float i, .linkedin-float i {
-      margin-top: 16px;
-    }
-
-    .popup {
-      position: fixed;
-      bottom: 140px;
-      right: 20px;
-      background: #fff;
-      border: 2px dashed #90be6d;
-      border-radius: 15px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      padding: 15px 20px;
-      max-width: 250px;
-      font-size: 1rem;
-      z-index: 999;
-      display: none;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header h2 {
-        font-size: 1rem;
-      }
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5rem; }
+      .experience-card { flex-direction: column; text-align: center; }
+      .exp-content ul li { text-align: left; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Background Music/Sound Toggle (Optional) -->
+  
   <header>
-    <h1>Irfan Suhaedi</h1>
-    <h2>Fleet & Supply Chain Administration Specialist</h2>
+    <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+      <h1>IRFAN SUHAEDI</h1>
+      <h2>Fleet & Supply Chain Specialist</h2>
+      <p style="margin-top: 20px; opacity: 0.8; max-width: 600px;">
+        Expert in Logistics Management, Fleet Maintenance, and Process Automation. 
+        Membangun efisiensi melalui data dan teknologi.
+      </p>
+    </div>
+    <div class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </header>
 
-  <section class="contact" style="--delay: 0s">
-    <h3>Contact</h3>
-    <p><strong>Email:</strong> suhaediirfan@gmail.com</p>
-    <p><strong>Phone:</strong> (+62)-895-0270-2764</p>
-    <p><strong>Field:</strong> Administration</p>
+  <!-- Summary Section -->
+  <section id="about" data-aos="fade-up">
+    <div class="section-title">
+      <h3>Profil Profesional</h3>
+    </div>
+    <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; font-size: 1.2rem; line-height: 1.8;">
+      <p>
+        Bekerja di jantung operasional logistik, saya memastikan setiap roda terus berputar. 
+        Dengan pengalaman lebih dari <strong>3 tahun</strong>, saya fokus pada pengintegrasian sistem data 
+        untuk mengelola armada besar dan rantai pasok yang kompleks. Ahli dalam mereduksi biaya operasional 
+        melalui monitoring yang ketat dan otomasi digital.
+      </p>
+    </div>
   </section>
 
-  <section class="summary" style="--delay: 0.1s">
-    <h3>Professional Summary</h3>
-    <p>Berpengalaman lebih dari 3 tahun dalam administrasi logistik dan armada dengan spesialisasi dalam pengelolaan data, pelaporan, dan optimalisasi operasional. Memiliki keahlian dalam sistem manajemen logistik dan berorientasi pada efisiensi proses kerja.</p>
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="section-title" data-aos="fade-up">
+      <h3>Pengalaman Kerja</h3>
+    </div>
+    
+    <div class="timeline">
+      <!-- Job 1 -->
+      <div class="experience-card" data-aos="fade-right">
+        <div class="exp-icon">
+          <i class="fas fa-truck-moving"></i>
+        </div>
+        <div class="exp-content">
+          <span class="job-date" style="float: right; font-weight: bold; color: var(--primary);">2022 – SEKARANG</span>
+          <h4>Fleet Administration</h4>
+          <span class="exp-company">PT TAL SARANA LOGISTIK</span>
+          <ul>
+            <li>Mengomandoi administrasi operasional <strong>100+ armada</strong> secara realtime.</li>
+            <li>Mengoptimalkan sistem GPS yang meningkatkan akurasi monitoring hingga 95%.</li>
+            <li>Membangun infrastruktur pelaporan otomatis menggunakan <strong>Google Apps Script</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="experience-card" data-aos="fade-left">
+        <div class="exp-icon">
+          <i class="fas fa-boxes-packing"></i>
+        </div>
+        <div class="exp-content">
+          <span class="job-date" style="float: right; font-weight: bold; color: var(--primary);">2019 – 2022</span>
+          <h4>Supply Chain Administration</h4>
+          <span class="exp-company">PT TANIHUB GROUP</span>
+          <ul>
+            <li>Memangkas waktu pelaporan stok hingga <strong>40%</strong> lewat otomasi data.</li>
+            <li>Sinkronisasi distribusi nasional antara Warehouse Pusat dan Vendor Regional.</li>
+            <li>Menjaga integritas data rantai pasok dengan sistem verifikasi berlapis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="experience-card" data-aos="fade-right">
+        <div class="exp-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <div class="exp-content">
+          <span class="job-date" style="float: right; font-weight: bold; color: var(--primary);">2018 – 2019</span>
+          <h4>Inventory Control</h4>
+          <span class="exp-company">CV CATELIYA FIBERGLASS</span>
+          <ul>
+            <li>Audit akurasi stok berkala (Cycle Count) menggunakan sistem WMS.</li>
+            <li>Memastikan ketersediaan bahan baku produksi 100% akurat terhadap jadwal distribusi.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="experience" style="--delay: 0.2s">
-    <h3>Experience</h3>
-    <p class="job-title">PT Tal Sarana Logistik <span class="job-period">(2022–Present)</span><br><em>Fleet Administration</em></p>
-    <ul>
-      <li>Memimpin pengelolaan data armada untuk lebih dari 100 kendaraan logistik aktif.</li>
-      <li>Mengimplementasikan sistem monitoring GPS yang meningkatkan akurasi pelacakan hingga 95%.</li>
-      <li>Mengembangkan format pelaporan efisiensi bahan bakar yang digunakan sebagai standar departemen.</li>
-      <li>Berperan penting dalam audit internal armada, memastikan dokumentasi kendaraan selalu up-to-date.</li>
-    </ul>
-    <p class="job-title">PT TaniHub Group <span class="job-period">(2019–2022)</span><br><em>Supply Chain Administration</em></p>
-    <ul>
-      <li>Berhasil menyusun ulang proses rekapitulasi stok harian yang mempercepat pelaporan sebanyak 40%.</li>
-      <li>Mengelola input dan kontrol dokumen pengiriman untuk rantai pasok nasional.</li>
-      <li>Bekerja sama dengan tim warehouse dan ekspedisi dalam optimalisasi rute pengiriman.</li>
-      <li>Menjadi perantara koordinasi antara gudang pusat dan vendor regional.</li>
-    </ul>
-    <p class="job-title">CV Cateliya Fiberglass <span class="job-period">(2018–2019)</span><br><em>Inventory Control</em></p>
-    <ul>
-      <li>Melakukan pengawasan dan pencatatan keluar masuk barang secara akurat menggunakan sistem WMS.</li>
-      <li>Bekerja sama dengan tim warehouse dalam mendukung kelancaran distribusi dan akurasi stok.</li>
-      <li>Membuat laporan harian dan mingguan mengenai pergerakan stok barang.</li>
-      <li>Melakukan cycle count dan penyesuaian stok sesuai dengan hasil audit.</li>
-    </ul>
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="section-title" data-aos="fade-up">
+      <h3>Keahlian & Tools</h3>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+        <i class="fas fa-file-excel"></i>
+        <h5>Data Analysis</h5>
+        <p>Advanced Excel, Sheets, & Formula Expert</p>
+      </div>
+      <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+        <i class="fas fa-code"></i>
+        <h5>Automation</h5>
+        <p>Google Apps Script & Process Automation</p>
+      </div>
+      <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+        <i class="fas fa-route"></i>
+        <h5>Logistics Ops</h5>
+        <p>Route Optimization & Fleet Maintenance</p>
+      </div>
+      <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
+        <i class="fas fa-database"></i>
+        <h5>ERP/WMS</h5>
+        <p>System Inventory & Management Specialist</p>
+      </div>
+    </div>
   </section>
 
-  <section class="education" style="--delay: 0.4s">
-    <h3>Education</h3>
-    <p><strong>2019:</strong> Teknik - <em>Smk Yadika 7 Bogor</em></p>
+  <!-- Education & Contact -->
+  <section style="text-align: center;" data-aos="fade-up">
+    <div class="section-title">
+      <h3>Pendidikan</h3>
+    </div>
+    <div style="background: var(--secondary); color: white; padding: 40px; border-radius: 20px;">
+      <h4>SMK YADIKA 7 BOGOR</h4>
+      <p>Teknik Kendaraan Ringan | Lulus 2019</p>
+    </div>
   </section>
 
-  <section class="skills" style="--delay: 0.6s">
-    <h3>Skills</h3>
-    <ul>
-      <li><strong>Microsoft Office & Google Workspace:</strong> Terampil menggunakan Word, Excel, PowerPoint, Google Docs, Sheets, dan Forms untuk pengolahan data, laporan, dan dokumentasi kerja.</li>
-      <li><strong>Administrasi Logistik & Armada:</strong> Berpengalaman dalam pencatatan data pengiriman, surat jalan, dan pengelolaan dokumen kendaraan serta jadwal perawatan.</li>
-      <li><strong>Penggunaan Software & Tools:</strong> Terbiasa menggunakan Microsoft Excel, Google Sheets, dan sistem manajemen logistik seperti ERP atau WMS untuk input dan pelaporan data.</li>
-      <li><strong>Koordinasi & Komunikasi:</strong> Mampu berkoordinasi efektif dengan tim warehouse, ekspedisi, dan vendor untuk kelancaran operasional harian.</li>
-      <li><strong>Ketelitian & Manajemen Waktu:</strong> Teliti dalam penginputan data dan mampu menyelesaikan tugas administratif dalam tenggat waktu yang ketat.</li>
-    </ul>
-  </section>
+  <footer style="text-align: center; padding: 60px; opacity: 0.6; font-size: 0.9rem;">
+    &copy; 2026 Irfan Suhaedi. Professional Resume.
+  </footer>
 
-  <section class="references" style="--delay: 0.8s">
-    <h3>References</h3>
-    <p>Available upon request</p>
-  </section>
-
-  <div class="popup" id="popupMessage">
-    Hubungi saya jika anda tertarik? <br><a href="https://wa.me/6289502702764" style="color:#25d366; font-weight:bold; text-decoration:none;">Hubungi lewat WhatsApp</a>
+  <!-- Floating Buttons -->
+  <div class="contact-container">
+    <a href="https://www.linkedin.com/in/irfan-suhaedi/" class="btn-float li" target="_blank">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://wa.me/628131342202" class="btn-float wa" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
 
-  <a href="https://wa.me/6289502702764" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <a href="https://www.linkedin.com/in/irfan-suhaedi/" class="linkedin-float" target="_blank">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    setTimeout(() => {
-      document.getElementById("popupMessage").style.display = "block";
-    }, 3000);
+    // Initialize Animations
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
+    // Smooth Scroll for Scroll Down icon
+    document.querySelector('.scroll-down').addEventListener('click', function() {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
   </script>
 </body>
 </html>
